@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Total Fees - Pawsitive Pet Academy</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <header class="header-container">
+        <a class="logo-link" href="index.html">
+            <img class="logo" src="../Media/logo.jpeg" alt="Pawsitive Pet Academy Logo">
+            <span>Pawsitive Pet Academy</span>
+        </a>
+        <nav class="Content-header">
+            <a class="header-content" href="index.html">Home</a>
+            <a class="header-content" href="about.html">About Us</a>
+            <div class="dropdown">
+                <button class="dropdown-btn" type="button">Courses &#9662;</button>
+                <div class="dropdown-content">
+                    <a href="services.html"><strong>All Courses Overview</strong></a>
+                    <div class="dropdown-category">6-Month Programmes</div>
+                    <a href="canine-obedience.html">Canine Obedience Training</a>
+                    <a href="pet-grooming.html">Pet Grooming</a>
+                    <a href="animal-behaviour.html">Animal Behaviour</a>
+                    <a href="pet-business.html">Pet Business Management</a>
+                    <div class="dropdown-category">6-Week Short Courses</div>
+                    <a href="puppy-care.html">Puppy Care</a>
+                    <a href="pet-first-aid.html">Pet First Aid</a>
+                    <a href="dog-walking.html">Basic Dog Walking</a>
+                </div>
+            </div>
+            <a class="header-content active" href="calculator.html">Fee Calculator</a>
+            <a class="header-content" href="contact.html">Contact Us</a>
+        </nav>
+        <a class="button" href="contact.html">Get In Touch</a>
+    </header>
+
+    <main class="hero-container">
+        <div class="hero-section">
+            <h1>Calculate Course Fees &amp; Get a Quote</h1>
+            <p>Select your desired courses to estimate total tuition including automatic multi-course discounts and 15% VAT.</p>
+        </div>
+    </main>
+
+    <section class="Quote-container">
+        <h2 class="qote">Interactive Course Fee Calculator</h2>
+        <p class="section-subtitle">Enroll in 2 courses for <strong>5% off</strong>, 3 courses for <strong>10% off</strong>, or 4+ courses for <strong>15% off</strong>.</p>
+    </section>
+
+    <div class="form-container">
+        <div class="form-box">
+            <div id="calc-alert" class="alert-banner"></div>
+
+            <form id="calculator-form" novalidate>
+                <h3 style="color: var(--deep-navy); margin-bottom: 16px;">1. Applicant Contact Information</h3>
+
+                <div class="form-group">
+                    <label for="calc-name">Full Name *</label>
+                    <input type="text" id="calc-name" placeholder="e.g., Shaun Stroebel" required>
+                    <span id="calc-name-error" class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="calc-phone">South African Phone Number *</label>
+                    <input type="tel" id="calc-phone" placeholder="e.g., 082 123 4567" required>
+                    <span id="calc-phone-error" class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="calc-email">Email Address *</label>
+                    <input type="email" id="calc-email" placeholder="e.g., shaun@example.co.za" required>
+                    <span id="calc-email-error" class="error-msg"></span>
+                </div>
+
+                <h3 style="color: var(--deep-navy); margin: 24px 0 8px;">2. Select Six-Month Professional Programmes (R1,500 each)</h3>
+                <div class="checkbox-grid">
+                    <label class="checkbox-item" for="c1">
+                        <input type="checkbox" class="course-check" value="1500" id="c1">
+                        <span>Canine Obedience Training (R1,500)</span>
+                    </label>
+                    <label class="checkbox-item" for="c2">
+                        <input type="checkbox" class="course-check" value="1500" id="c2">
+                        <span>Pet Grooming (R1,500)</span>
+                    </label>
+                    <label class="checkbox-item" for="c3">
+                        <input type="checkbox" class="course-check" value="1500" id="c3">
+                        <span>Animal Behaviour (R1,500)</span>
+                    </label>
+                    <label class="checkbox-item" for="c4">
+                        <input type="checkbox" class="course-check" value="1500" id="c4">
+                        <span>Pet Business Management (R1,500)</span>
+                    </label>
+                </div>
+
+                <h3 style="color: var(--deep-navy); margin: 20px 0 8px;">3. Select Six-Week Short Courses (R750 each)</h3>
+                <div class="checkbox-grid">
+                    <label class="checkbox-item" for="c5">
+                        <input type="checkbox" class="course-check" value="750" id="c5">
+                        <span>Puppy Care (R750)</span>
+                    </label>
+                    <label class="checkbox-item" for="c6">
+                        <input type="checkbox" class="course-check" value="750" id="c6">
+                        <span>Pet First Aid (R750)</span>
+                    </label>
+                    <label class="checkbox-item" for="c7">
+                        <input type="checkbox" class="course-check" value="750" id="c7">
+                        <span>Basic Dog Walking (R750)</span>
+                    </label>
+                </div>
+
+                <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px;">
+                    <button type="button" class="button"  onclick="calculateTotal()">Calculate Quote</button>
+                    <button type="button" class="button" style="border-color: #cbd5e1;" onclick="resetCalculator()">Clear Selection</button>
+                </div>
+            </form>
+
+            <div id="quote-result" class="quote-box">
+                <h3 style="color: var(--deep-navy); margin-bottom: 10px;">Official Fee Quotation Summary</h3>
+                <p id="quote-client-info" style="margin-bottom: 16px; font-size: 0.92rem; color: #334155;"></p>
+
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Selected Course</th>
+                            <th>Duration</th>
+                            <th>Fee</th>
+                        </tr>
+                    </thead>
+                    <tbody id="quote-items-body"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Subtotal (Excl. VAT)</td>
+                            <td>R<span id="subtotal">0.00</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Multi-Course Discount (<span id="discount-percent">0</span>%)</td>
+                            <td>-R<span id="discount-amount">0.00</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">VAT (15%)</td>
+                            <td>R<span id="vat-amount">0.00</span></td>
+                        </tr>
+                        <tr style="background-color: var(--deep-navy); color: var(--white);">
+                            <td colspan="2">Total Quoted Fee (Incl. VAT)</td>
+                            <td>R<span id="total-amount">0.00</span></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p style="margin-top: 14px; font-size: 0.85rem; color: #64748b;"><em>*This is a calculated quotation only and does not constitute a formal tax invoice.</em></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <img class="footer-logo" src="../Media/logo.jpeg" alt="Pawsitive Pet Academy Logo">
+                <p>Empowering pet owners and aspiring professionals in Durban with expert care and training since 2023.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Courses</a></li>
+                    <li><a href="calculator.html">Fee Calculator</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-services">
+                <h3>Popular Courses</h3>
+                <ul>
+                    <li><a href="canine-obedience.html">Canine Obedience</a></li>
+                    <li><a href="pet-grooming.html">Pet Grooming</a></li>
+                    <li><a href="puppy-care.html">Puppy Care</a></li>
+                    <li><a href="pet-first-aid.html">Pet First Aid</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>142 Florida Road, Morningside, Durban</p>
+                <p>Email: <a href="mailto:info@pawsitivepetacademy.co.za">info@pawsitivepetacademy.co.za</a></p>
+                <p>Phone: <a href="tel:+27310000000">+27 (031) 000-0000</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pawsitive Pet Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+</body>
+</html>

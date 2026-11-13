@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Pawsitive Pet Academy</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <header class="header-container">
+        <a class="logo-link" href="index.html">
+            <img class="logo" src="../Media/logo.jpeg" alt="Pawsitive Pet Academy Logo">
+            <span>Pawsitive Pet Academy</span>
+        </a>
+        <nav class="Content-header">
+            <a class="header-content" href="index.html">Home</a>
+            <a class="header-content" href="about.html">About Us</a>
+            <div class="dropdown">
+                <button class="dropdown-btn" type="button">Courses &#9662;</button>
+                <div class="dropdown-content">
+                    <a href="services.html"><strong>All Courses Overview</strong></a>
+                    <div class="dropdown-category">6-Month Programmes</div>
+                    <a href="canine-obedience.html">Canine Obedience Training</a>
+                    <a href="pet-grooming.html">Pet Grooming</a>
+                    <a href="animal-behaviour.html">Animal Behaviour</a>
+                    <a href="pet-business.html">Pet Business Management</a>
+                    <div class="dropdown-category">6-Week Short Courses</div>
+                    <a href="puppy-care.html">Puppy Care</a>
+                    <a href="pet-first-aid.html">Pet First Aid</a>
+                    <a href="dog-walking.html">Basic Dog Walking</a>
+                </div>
+            </div>
+            <a class="header-content" href="calculator.html">Fee Calculator</a>
+            <a class="header-content active" href="contact.html">Contact Us</a>
+        </nav>
+        <a class="button" href="calculator.html">Get a Quote</a>
+    </header>
+
+    <main class="hero-container">
+        <div class="hero-section">
+            <h1>Get In Touch With Us</h1>
+            <p>Have questions about course schedules, practical assessments, or group enrollments? Reach out to our Durban campus.</p>
+            <div class="hero-buttons">
+                <a class="button" href="services.html">Explore Courses</a>
+                <a class="button button-primary" href="calculator.html">Calculate Course Fees</a>
+            </div>
+        </div>
+    </main>
+
+    <div class="devider">Pawsitive Pet Academy &bull; 142 Florida Road, Morningside, Durban &bull; Mon–Fri: 08:00 – 17:00</div>
+
+    <section class="Quote-container">
+        <h2 class="qote">We'd Love To Hear From You</h2>
+        <p class="section-subtitle">Complete the inquiry form below or visit our training facility in Durban.</p>
+    </section>
+
+    <section class="Services-container">
+        <div class="card" style="background-color: var(--white); color: #1e293b; text-align: left; width: 520px; border-top: 5px solid var(--primary-orange);">
+            <h2 class="heading" style="color: var(--deep-navy);">Send Us A Message</h2>
+            <div id="contact-alert" class="alert-banner"></div>
+
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="contact-name">Full Name *</label>
+                    <input type="text" id="contact-name" name="name" placeholder="Your Full Name" required>
+                    <span id="contact-name-error" class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-phone">Phone Number *</label>
+                    <input type="tel" id="contact-phone" name="phone" placeholder="e.g., 082 123 4567" required>
+                    <span id="contact-phone-error" class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-email">Email Address *</label>
+                    <input type="email" id="contact-email" name="email" placeholder="your.email@example.com" required>
+                    <span id="contact-email-error" class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="course">Select Course of Interest</label>
+                    <select id="course" name="course">
+                        <option value="canine-obedience">Canine Obedience Training (6 Months - R1,500)</option>
+                        <option value="pet-grooming">Pet Grooming (6 Months - R1,500)</option>
+                        <option value="animal-behaviour">Animal Behaviour (6 Months - R1,500)</option>
+                        <option value="pet-business">Pet Business Management (6 Months - R1,500)</option>
+                        <option value="puppy-care">Puppy Care (6 Weeks - R750)</option>
+                        <option value="pet-first-aid">Pet First Aid (6 Weeks - R750)</option>
+                        <option value="dog-walking">Basic Dog Walking (6 Weeks - R750)</option>
+                        <option value="other">General Inquiry</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-message">Message *</label>
+                    <textarea id="contact-message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
+                    <span id="contact-message-error" class="error-msg"></span>
+                </div>
+
+                <button type="submit" class="button button-primary">Submit Request</button>
+            </form>
+        </div>
+
+        <div class="card" style="text-align: left; width: 480px;">
+            <div>
+                <h2 class="heading">Campus Contact Details</h2>
+                <p class="info"><strong>Address:</strong> 142 Florida Road, Morningside, Durban, 4001</p>
+                <p class="info"><strong>Email:</strong> info@pawsitivepetacademy.co.za</p>
+                <p class="info"><strong>Phone:</strong> +27 (031) 000-0000</p>
+                <p class="info"><strong>Operating Hours:</strong> Mon – Fri: 08:00 – 1
