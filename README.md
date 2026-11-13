@@ -34,21 +34,8 @@ Team Secretary & Lead Web Developer
 
 ST10507489
 
-Reginaldo Muriame Gime
 
-Mobile Application Developer & UX/UI Designer
 
-ST10535021
-
-🔗 Project Repositories & Links
-
-Website Source Code (GitHub): https://github.com/shaunstroebel/PeasInAPod/
-
-Mobile Application Source Code (GitHub): https://github.com/roberto979/PawsitiveApp.git
-
-High-Fidelity Wireframes (Figma): https://canvas-hire-67236687.figma.site/
-
-Group Presentation Video (YouTube Unlisted): https://youtube.com/shorts/n5kMxs2PYrc?si=HL-o-tyncoA3EbRI
 
 ✨ Key Features & Functionality
 
